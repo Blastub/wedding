@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<!-- lang="en" sets the primary language of the page -->
+<!-- scroll-smooth enables smooth scrolling when clicking anchor links (like the "Explore Details" button) -->
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensures proper scaling and responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samantha & Benjamin — Wedding Details</title>
+
+    <!-- Tailwind CSS Play CDN (version 4) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<!-- body: Soft warm background color, dark stone text, system sans-serif font, and smooth antialiased font rendering -->
+<body class="bg-[#fcfbf9] text-stone-800 antialiased font-sans selection:bg-stone-200">
+
+    <!-- ========================================== -->
+    <!-- HERO SECTION (Landing screen)              -->
+    <!-- ========================================== -->
+    <!-- min-h-screen makes it full window height; flex centers content vertically and horizontally -->
+    <!--
+      - relative: Allows absolute positioning elements (like our color overlay) to sit inside it.
+      - bg-cover: Makes sure the image covers the entire area without distorting.
+      - bg-center: Centers the image focal point.
+    -->
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative bg-cover bg-center" style="background-image: url('images/foto 34.jpg');">
+
+        <!-- DARK/SOFT OVERLAY: Sits directly over the background image to make white text pop -->
+        <div class="absolute inset-0 bg-stone-900/40"></div>
+
+        <!-- CONTENT: relative + z-10 ensures text floats safely on top of the overlay -->
+        <div class="max-w-2xl mx-auto space-y-4 relative z-10">
+            <span class="text-xs uppercase tracking-[0.3em] text-stone-200 font-medium">We're Getting Married</span>
+            <h1 class="text-5xl md:text-6xl font-serif text-white tracking-tight">Samantha & Benjamin</h1>
+            <p class="text-stone-200 tracking-widest text-sm md:text-base uppercase pt-2">December 22, 2026 • Jocotenango, Guatemala</p>
+
+            <div class="pt-8">
+                <a href="#details" class="inline-block border border-white text-white px-8 py-3 rounded-full text-sm tracking-widest uppercase hover:bg-white hover:text-stone-900 transition duration-300">
+                    Explore Details
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- DETAILS / SCHEDULE / MAP                   -->
+    <!-- ========================================== -->
+    <!-- py-24 adds generous top/bottom padding; max-w-4xl keeps the layout constrained and readable -->
+    <section id="details" class="py-24 px-6 max-w-4xl mx-auto border-t border-stone-200">
+
+        <!-- Section Header -->
+        <div class="text-center mb-16 space-y-2">
+            <h2 class="text-3xl md:text-4xl font-serif text-stone-900">Schedule and Location</h2>
+            <p class="text-stone-500 text-sm">A brief overview of our celebration events.</p>
+        </div>
+
+        <!-- Grid Layout: 2 columns on medium screens and larger, stacked on mobile -->
+        <div class="grid md:grid-cols-2 gap-12 text-center md:text-left">
+
+            <!-- FIRST CARD (Ceremony & Map Embedded Inside) -->
+            <div class="bg-white p-8 rounded-2xl border border-stone-100 shadow-xs space-y-3 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-serif text-stone-900 mt-1 mb-2">The Loose Schedule</h3>
+                    <span class="text-xs font-semibold tracking-wider uppercase text-stone-400">Ceremony starts at 3:30 PM</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECOND CARD (Reception) -->
+            <div class="bg-white p-8 rounded-2xl border border-stone-100 shadow-xs space-y-3">
+                <h3 class="text-xl font-serif text-stone-900 mt-1 mb-2">Location</h3>
+                <span class="text-xs font-semibold tracking-wider uppercase text-stone-400">The Casa Santa Catalina</span>
+                <!-- Embedded Map inside the card -->
+                <div class="rounded-xl overflow-hidden border border-stone-200 mt-2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.2398832828444!2d-90.74858462420225!3d14.58540238589919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85890df2fccd8b99%3A0x5d285a164bd5353e!2sCasa%20Santa%20Catalina!5e0!3m2!1sen!2sgt!4v1788642940324!5m2!1sen!2sgt"
+                            width="100"
+                            height="200"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="w-full block">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- RSVP FORM SECTION                          -->
+    <!-- ========================================== -->
+    <section id="rsvp" class="py-24 px-6 max-w-xl mx-auto border-t border-stone-200">
+        <div class="text-center mb-12 space-y-2">
+            <h2 class="text-3xl md:text-4xl font-serif text-stone-900">Join Us</h2>
+            <p class="text-stone-500 text-sm">Please let us know if you can make it.</p>
+        </div>
+
+        <!-- Added id="rsvp-form" so JavaScript can catch the submission -->
+        <form id="rsvp-form" class="space-y-6 bg-white p-8 rounded-2xl border border-stone-100 shadow-xs">
+
+            <div>
+                <label class="block text-xs uppercase tracking-wider text-stone-500 mb-2">Full Name</label>
+                <input type="text" name="name" required class="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-3 text-stone-800 focus:outline-none focus:border-stone-500 transition">
+            </div>
+
+            <div>
+                <label class="block text-xs uppercase tracking-wider text-stone-500 mb-2">Will you attend?</label>
+                <select name="attendance" class="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-3 text-stone-800 focus:outline-none focus:border-stone-500 transition">
+                    <option value="Joyfully accepts">Joyfully accepts</option>
+                    <option value="Regretfully declines">Regretfully declines</option>
+                </select>
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full bg-stone-900 text-white py-3 rounded-lg font-medium tracking-wide hover:bg-stone-800 transition cursor-pointer">
+                Send RSVP
+            </button>
+
+            <!-- Success Message (Hidden by default) -->
+            <p id="success-msg" class="hidden text-center text-green-600 font-medium text-sm pt-2">
+                Thank you! Your RSVP has been received. ✨
+            </p>
+        </form>
+    </section>
+
+    <!-- JAVASCRIPT TO SEND DATA TO GOOGLE SHEETS -->
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxxfOJlox7wDyROUBgy8cwFRlji1DFQ9NmCGZpf0I3PrckZ9IKFrQBEWrSbTKuoa0t1/exec'; // <-- PASTE YOUR GOOGLE SCRIPT URL HERE
+    const form = document.getElementById('rsvp-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMsg = document.getElementById('success-msg');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // Stop page from reloading
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+            .then(response => {
+                form.reset();
+                submitBtn.style.display = 'none';
+                successMsg.classList.remove('hidden');
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Oops! Something went wrong. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send RSVP';
+            });
+    });
+    </script>
+
+    <!-- ========================================== -->
+    <!--      REGISTERY       -->
+    <!-- ========================================== -->
+    <section class="py-24 px-6 max-w-3xl mx-auto border-t border-stone-200 text-center">
+        <h2 class="text-3xl md:text-4xl font-serif text-stone-900 mb-6">Gifts</h2>
+        <p class="text-stone-600 text-sm md:text-base leading-relaxed">
+            We want to be clear about something. You do not need to bring us a gift to attend. We have invited you because we want to share our special day with you. Your presence is all we want. 
+        </p>
+        <p class="text-stone-600 text-sm md:text-base leading-relaxed mb-8">
+            However if you do feel called to bless us in a financial manner or in a gift, we have options here!
+        </p>
+
+
+        <!-- Registery Actions -->
+        <div class="inline-flex gap-4">
+            <a href="#" class="bg-blue-900 text-white px-8 py-4.5 rounded-full text-sm font-medium hover:bg-stone-300 transition">Novex</a>
+            <a href="#" class="bg-red-900 text-white px-8 py-4.5 rounded-full text-sm font-medium hover:bg-stone-300 transition">Max</a>
+            <a href="#" class="bg-green-900 text-white px-8 py-4.5 rounded-full text-sm font-medium hover:bg-stone-300 transition">Cemaco</a>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer class="py-12 text-center text-xs text-stone-400 tracking-widest uppercase border-t border-stone-200">
+        Samantha & Benjamin • 2026
+    </footer>
+
+</body>
+</html>
